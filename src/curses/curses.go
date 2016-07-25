@@ -637,6 +637,7 @@ func (w *Window) Move(y int, x int) {
 func (w *Window) MoveAndClear(y int, x int) {
 	w.Move(y, x)
 	C.wclrtoeol(w.win)
+	C.wrefresh(w.win)
 }
 
 func (w *Window) Print(text string) {
